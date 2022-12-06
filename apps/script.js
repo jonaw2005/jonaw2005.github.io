@@ -1,6 +1,4 @@
 function update(){
   var div = document.getElementById("div1");
-  div.innerHTML = "test";
-  alert("divtest");
-  
+  div.innerHTML = "content2";
 }
