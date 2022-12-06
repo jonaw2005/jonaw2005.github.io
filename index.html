@@ -3,6 +3,13 @@
      <div id="div1">
        <p>noch nicht geclickt</p>
      </div>
-    <button onclick="../apps/script.js">click<button>
+    <button onclick=>click<button>
+      <script type="text/javascript">
+        var div = document.getElementById("div1");
+        div.onClick = function(){
+         alert(1); 
+        }  
+        
+      </script>
   </body>
 </html>
