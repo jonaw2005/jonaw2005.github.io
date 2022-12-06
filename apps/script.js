@@ -11,7 +11,7 @@ function canv(){
   const canvas = document.getElementById("canvas");  
   const ctx = canvas.getContext("2d");
   
-  ctx.fillText("TEST", 50, 50);
+  ctx.fillText("TEST", 150, 150);
   
   let textArr = ["H", "A", "L", "L", "O", "!"];
   let x = 0;
@@ -19,7 +19,7 @@ function canv(){
   
   for(let i = 0; i<6; i++){
     text = text + textArr[i];
-    ctx.fillText(text, 10, 50);
+    ctx.fillText(text, 0, 0);
     
     wait(1000);
     
