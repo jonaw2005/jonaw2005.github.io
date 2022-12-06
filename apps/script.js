@@ -16,6 +16,8 @@ function canv(){
   
   for(let i = 0; i<6; i++){
     text = text + textArr[i];
+    ctx.fillText(text, 10, 50);
+    
     wait(1000);
     
   }
