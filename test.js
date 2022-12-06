@@ -1,3 +1,5 @@
 function functionname(){
- alert("test"); 
+	var x = document.getElementById("div1");
+	x.innerHTML = "ausgeführt";
+	
 }
