@@ -13,18 +13,12 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Raleway', sans-serif; /* Use a modern font */
     background: url('/images/background_gradient.jpg') no-repeat center center fixed;
     background-size: cover; /* Ensure the image covers the entire background */
     padding-top: 50px; /* Add padding to prevent content overlap with the fixed menu */
 }
 
-#content-div {
-    text-align: center;
-    font-size: 2rem;
-    color: white;
-    background-image: url('/images/background_gradient.jpg');
-}
 
 .menu-bar {
     position: fixed;
@@ -62,4 +56,10 @@ body {
 
 .menu-bar a:hover {
     background-color: #575757;
+}
+
+#content-div {
+    text-align: center;
+    font-size: 2rem;
+    position: fixed;;
 }
