@@ -1,11 +1,19 @@
-/* Center the message and apply a cool font */
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;	
+	font-family: Raleway, sans-serif;
+}
+
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: 'Poppins', sans-serif; /* Use a modern font */
+    font-family: 'Raleway', sans-serif;
     background: url('/images/background_gradient.jpg') no-repeat center center fixed;
     background-size: cover; /* Ensure the image covers the entire background */
     padding-top: 50px; /* Add padding to prevent content overlap with the fixed menu */
@@ -15,6 +23,7 @@ body {
     text-align: center;
     font-size: 2rem;
     color: white;
+    background-image: url('/images/background_gradient.jpg');
 }
 
 .menu-bar {
