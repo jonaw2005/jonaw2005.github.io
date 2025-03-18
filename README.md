@@ -18,7 +18,7 @@ Here are some of the projects you can explore:
 
 Feel free to visit my Website:  [jonaw2005.github.io](https://jonaw2005.github.io)
 
-### Information about updates anc changes
+### Information about updates and changes
 
 At the moment this page is empty, as I am working on it with very limited time due to studying for my **Bachelor of Engineering**.
 
