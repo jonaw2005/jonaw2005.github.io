@@ -11,12 +11,15 @@ Here are some of the projects you can explore:
 - **Discord Bots**: Custom bots designed to enhance your server experience.
 - **Neat Little Tools**: Handy utilities for everyday tasks.
 - **Creative Projects**: Unique and imaginative creations.
+- **Web Development**: Small Websites with Frontend and Backend, to learn PHP, JS and SQL
 - ...and many more to come!
 
 ### Website
 
-[Feel free to visit my Website](https://jonaw2005.github.io)
+Feel free to visit my Website: [jonaw2005.github.io](https://jonaw2005.github.io)
 
-At the moment this page is empty, as I am working on it with very limited time due to studying for my Bachelor of Engineering.
+### Information about updates anc changes
+
+At the moment this page is empty, as I am working on it with very limited time due to studying for my **Bachelor of Engineering**.
 
 Stay tuned for updates as I continue to work on exciting new ideas!
