@@ -1,0 +1,56 @@
+/* Center the message and apply a cool font */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Poppins', sans-serif; /* Use a modern font */
+    background: url('/images/background_gradient.png') no-repeat center center fixed;
+    background-size: cover; /* Ensure the image covers the entire background */
+    padding-top: 50px; /* Add padding to prevent content overlap with the fixed menu */
+}
+
+#welcome-message {
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+}
+
+.menu-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; /* Full width of the site */
+    background-color: #333;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+}
+
+.menu-bar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu-bar li {
+    margin: 0;
+    padding: 0;
+}
+
+.menu-bar a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+}
+
+.menu-bar a:hover {
+    background-color: #575757;
+}
