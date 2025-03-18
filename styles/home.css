@@ -13,7 +13,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: 'Raleway', sans-serif; /* Use a modern font */
+    font-family: 'Raleway', sans-serif;
     background: url('/images/background_gradient.jpg') no-repeat center center fixed;
     background-size: cover; /* Ensure the image covers the entire background */
     padding-top: 50px; /* Add padding to prevent content overlap with the fixed menu */
@@ -58,8 +58,8 @@ body {
     background-color: #575757;
 }
 
-#content-div {
+.content-div {
     text-align: center;
     font-size: 2rem;
-    position: fixed;;
+    position: fixed;
 }
