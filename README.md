@@ -16,7 +16,7 @@ Here are some of the projects you can explore:
 
 ### Website
 
-Feel free to visit my Website: [jonaw2005.github.io](https://jonaw2005.github.io)
+Feel free to visit my Website:  [jonaw2005.github.io](https://jonaw2005.github.io)
 
 ### Information about updates anc changes
 
