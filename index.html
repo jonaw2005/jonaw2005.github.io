@@ -30,6 +30,15 @@
 
         async function increment() {
             await addDoc(collection(db, "visit"), {"visit": "increment"});
+            const query = await getDocs(collection(db, "visit"))
+            let count = 0;
+            query.forEach(doc => {
+                if (doc.data().visit === "increment") {
+                    count++;
+                }
+            });
+            console.log(`Number of increments: ${count}`);
+
         }
         window.onload = increment;
     </script>
