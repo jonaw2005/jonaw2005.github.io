@@ -5,6 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome!</title>
     <link rel="stylesheet" href="/styles/home.css">
+    <script type="module">
+        // Import the functions you need from the SDKs you need
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
+        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
+
+        // TODO: Add SDKs for Firebase products that you want to use
+        // https://firebase.google.com/docs/web/setup#available-libraries
+      
+        // Your web app's Firebase configuration
+        const firebaseConfig = {
+          apiKey: "",
+          authDomain: "jonaw2005-github-guestbook.firebaseapp.com",
+          projectId: "jonaw2005-github-guestbook",
+          storageBucket: "jonaw2005-github-guestbook.firebasestorage.app",
+          messagingSenderId: "445612499350",
+          appId: "1:445612499350:web:8e0edf7c731f092b78bdb7"
+        };
+      
+        // Initialize Firebase
+        const app = initializeApp(firebaseConfig);
+        
+        const db = getFirestore(app);
+
+        async function increment() {
+            await addDoc(collection(db, "visit"), 1);
+        }
+        window.onload = increment;
+    </script>
 </head>
 <body>
     <nav class="menu-bar">
