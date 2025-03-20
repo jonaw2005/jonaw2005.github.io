@@ -29,7 +29,7 @@
         const db = getFirestore(app);
 
         async function increment() {
-            await addDoc(collection(db, "visit"), "1");
+            await addDoc(collection(db, "visit"), {"visit": "increment"});
         }
         window.onload = increment;
     </script>
