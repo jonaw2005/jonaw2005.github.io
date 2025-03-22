@@ -6,44 +6,27 @@
     <title>Welcome!</title>
     <link rel="stylesheet" href="/styles/guestbook.css">
     <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js";
-        import { getFirestore, collection, addDoc, getDocs } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
-
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
-      
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-          apiKey: "",
-          authDomain: "jonaw2005-github-guestbook.firebaseapp.com",
-          projectId: "jonaw2005-github-guestbook",
-          storageBucket: "jonaw2005-github-guestbook.firebasestorage.app",
-          messagingSenderId: "445612499350",
-          appId: "1:445612499350:web:8e0edf7c731f092b78bdb7"
-        };
-      
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        
-        const db = getFirestore(app);
-
         async function addMessage() {
             const name = document.getElementById('name').value;
             const message = document.getElementById('message').value;
-            let date = new Date().toISOString().split('T')[0];
-            await addDoc(collection(db, "guestbook"), { name, message, date });
-            
+            const date = new Date().toISOString().split('T')[0];
+
+            await fetch('http://localhost:5000/guestbook', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name, message, date })
+            });
+
             document.getElementById('name').value = '';
             document.getElementById('message').value = '';
-            
-            date = '';
 
             getMessages();
         }
 
         async function getMessages() {
-            const querySnapshot = await getDocs(collection(db, "guestbook"));
+            const response = await fetch('http://localhost:5000/guestbook');
+            const messages = await response.json();
+
             const table = document.getElementById("guestbook-table");
             const table_head = table.querySelector('thead');
             const table_body = table.querySelector('tbody');
@@ -53,24 +36,19 @@
                     <th>Message</th>
                     <th>Date</th>
                 </tr>
-                <tbody></tbody>
             `;
-            const tbody = table.querySelector('tbody');
-            tbody.innerHTML = '';
-            querySnapshot.forEach((doc) => {
-                const data = doc.data();
+            table_body.innerHTML = '';
+            messages.forEach((data) => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
                     <td>${data.name}</td>
                     <td>${data.message}</td>
                     <td>${data.date || 'N/A'}</td>
                 `;
-                tbody.appendChild(row);
+                table_body.appendChild(row);
             });
-            const container = document.getElementById("table-container");
-            //container.innerHTML = ''; // Clear existing content
-            container.appendChild(table);
         }
+
         window.addMessage = addMessage;
         window.onload = getMessages;
     </script>
