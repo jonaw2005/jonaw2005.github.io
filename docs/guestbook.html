@@ -38,10 +38,10 @@
             const response = await fetch('http://api.codingwithjo.tech/entries').then(response => response.json());
             messages_array = response;
             messages_array.forEach((messages) => 
-                            const name = messages[1];
-                            const message = messages[2];
-                            const date = messages[3];
-                            const row = document.createElement('tr');
+                            name = messages[1];
+                            message = messages[2];
+                            date = messages[3];
+                            row = document.createElement('tr');
                             row.innerHTML = `
                                 <td>${name}</td>
                                 <td>${message}</td>
