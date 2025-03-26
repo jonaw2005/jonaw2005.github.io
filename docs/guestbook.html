@@ -16,7 +16,7 @@
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, message, date })
             });
-
+            console.log("sent");
             document.getElementById('name').value = '';
             document.getElementById('message').value = '';
 
@@ -24,11 +24,6 @@
         }
 
         async function getMessages() {
-            const response = await fetch('http://api.codingwithjo.tech/entries');
-            const messages = await response.json();
-            const name = messages[1];
-            const message = messages[2];
-            const date = messages[3];
             const table = document.getElementById("guestbook-table");
             const table_head = table.querySelector('thead');
             const table_body = table.querySelector('tbody');
@@ -40,15 +35,20 @@
                 </tr>
             `;
             table_body.innerHTML = '';
-            messages.forEach((data) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${name}</td>
-                    <td>${message}</td>
-                    <td>${date || 'N/A'}</td>
-                `;
-                table_body.appendChild(row);
-            });
+            const response = await fetch('http://api.codingwithjo.tech/entries').then(response => response.json());
+            messages_array = response;
+            messages_array.forEach((messages) => 
+                            const name = messages[1];
+                            const message = messages[2];
+                            const date = messages[3];
+                            const row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${name}</td>
+                                <td>${message}</td>
+                                <td>${date || 'N/A'}</td>
+                                `;
+                            table_body.appendChild(row);
+                            );
         }
 
         window.addMessage = addMessage;
