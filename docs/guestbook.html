@@ -37,15 +37,12 @@
             table_body.innerHTML = '';
             const response = await fetch('http://api.codingwithjo.tech/entries').then(response => response.json());
             messages_array = response;
-            messages_array.forEach((messages) => 
-                            name = messages[1];
-                            message = messages[2];
-                            date = messages[3];
+            messages_array.forEach((messages) =>
                             row = document.createElement('tr');
                             row.innerHTML = `
-                                <td>${name}</td>
-                                <td>${message}</td>
-                                <td>${date || 'N/A'}</td>
+                                <td>${messages[1]}</td>
+                                <td>${messages[2]}</td>
+                                <td>${messages[3] || 'N/A'}</td>
                                 `;
                             table_body.appendChild(row);
                             );
