@@ -11,7 +11,7 @@
             const message = document.getElementById('message').value;
             const date = new Date().toISOString().split('T')[0];
 
-            await fetch('http://localhost:5000/guestbook', {
+            await fetch('http://api.codingwithjo.tech/entries', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, message, date })
@@ -24,9 +24,11 @@
         }
 
         async function getMessages() {
-            const response = await fetch('http://localhost:5000/guestbook');
+            const response = await fetch('http://api.codingwithjo.tech/entries');
             const messages = await response.json();
-
+            const name = messages[1];
+            const message = messages[2];
+            const date = messages[3];
             const table = document.getElementById("guestbook-table");
             const table_head = table.querySelector('thead');
             const table_body = table.querySelector('tbody');
@@ -41,9 +43,9 @@
             messages.forEach((data) => {
                 const row = document.createElement('tr');
                 row.innerHTML = `
-                    <td>${data.name}</td>
-                    <td>${data.message}</td>
-                    <td>${data.date || 'N/A'}</td>
+                    <td>${name}</td>
+                    <td>${message}</td>
+                    <td>${date || 'N/A'}</td>
                 `;
                 table_body.appendChild(row);
             });
