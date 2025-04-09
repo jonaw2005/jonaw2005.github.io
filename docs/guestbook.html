@@ -36,7 +36,7 @@
             `;
             table_body.innerHTML = '';
             const response = await fetch('http://api.codingwithjo.tech/entries').then(response => response.json());
-            messages_array = response;
+            const messages_array = response;
             messages_array.forEach((messages) =>
                             table_body.appendChild(create_table_element(messages))
                         );
