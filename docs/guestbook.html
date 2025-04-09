@@ -45,9 +45,9 @@
         function create_table_element(messages) {
             const row = document.createElement('tr');
             row.innerHTML = `
-                <td>${messages[1]}</td>
-                <td>${messages[2]}</td>
-                <td>${messages[3] || 'N/A'}</td>
+                <td>${messages['name']}</td>
+                <td>${messages['message']}</td>
+                <td>${messages['date'] || 'N/A'}</td>
             `;
             return row;
         }
