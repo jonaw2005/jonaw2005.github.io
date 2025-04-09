@@ -38,14 +38,17 @@
             const response = await fetch('http://api.codingwithjo.tech/entries').then(response => response.json());
             messages_array = response;
             messages_array.forEach((messages) =>
-                            row = document.createElement('tr');
-                            row.innerHTML = `
-                                <td>${messages[1]}</td>
-                                <td>${messages[2]}</td>
-                                <td>${messages[3] || 'N/A'}</td>
-                                `;
-                            table_body.appendChild(row);
-                            );
+                            table_body.appendChild(create_table_element(messages))
+                        );
+        }
+        function create_table_element(messages) {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${messages[1]}</td>
+                <td>${messages[2]}</td>
+                <td>${messages[3] || 'N/A'}</td>
+            `;
+            return row;
         }
 
         window.addMessage = addMessage;
