@@ -11,12 +11,12 @@
             const message = document.getElementById('message').value;
             const date = new Date().toISOString().split('T')[0];
 
-            await fetch('http://localhost:5000/guestbook', {
+            await fetch('http://api.codingwithjo.tech/entries', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ name, message, date })
             });
-
+            console.log("sent");
             document.getElementById('name').value = '';
             document.getElementById('message').value = '';
 
@@ -24,9 +24,6 @@
         }
 
         async function getMessages() {
-            const response = await fetch('http://localhost:5000/guestbook');
-            const messages = await response.json();
-
             const table = document.getElementById("guestbook-table");
             const table_head = table.querySelector('thead');
             const table_body = table.querySelector('tbody');
@@ -38,15 +35,17 @@
                 </tr>
             `;
             table_body.innerHTML = '';
-            messages.forEach((data) => {
-                const row = document.createElement('tr');
-                row.innerHTML = `
-                    <td>${data.name}</td>
-                    <td>${data.message}</td>
-                    <td>${data.date || 'N/A'}</td>
-                `;
-                table_body.appendChild(row);
-            });
+            const response = await fetch('http://api.codingwithjo.tech/entries').then(response => response.json());
+            messages_array = response;
+            messages_array.forEach((messages) =>
+                            row = document.createElement('tr');
+                            row.innerHTML = `
+                                <td>${messages[1]}</td>
+                                <td>${messages[2]}</td>
+                                <td>${messages[3] || 'N/A'}</td>
+                                `;
+                            table_body.appendChild(row);
+                            );
         }
 
         window.addMessage = addMessage;
