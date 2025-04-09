@@ -28,5 +28,5 @@ Stay tuned for updates as I continue to work on exciting new ideas!
 ToDo:
 - add webhook so the website updates with each new commit ("/update" route in flask)
 - pack the API into a docker container (https://dev.to/codemaker2015/build-and-deploy-flask-rest-api-on-docker-25mf)
-- make the API query SQL server instead of local sqlite file
+- make the API query SQL server instead of local sqlite file (PostgreSQL)
 - edit the website to work on mobile devices
